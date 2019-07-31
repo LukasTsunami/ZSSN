@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Survivor do
   describe 'Creating a new survivor' do
     context 'when data is valid' do

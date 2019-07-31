@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Item do
   context 'When creating an item' do
     context 'when data is valid' do
