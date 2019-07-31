@@ -6,6 +6,7 @@ COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 RUN gem install bundler:2.0.2
 RUN bundle install
+RUN bundle update coderay
 COPY . /myapp
 
 # Add a script to be executed every time the container starts.
