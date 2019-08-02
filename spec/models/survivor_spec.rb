@@ -7,6 +7,11 @@ RSpec.describe Survivor do
         survivor = create(:survivor)
         expect(survivor).to be_valid
       end
+
+      it 'should return a new survivor with an item list' do
+        survivor = create(:survivor)
+        expect(survivor.items.exists?).to be_valid
+      end
     end
   end
 end
