@@ -1,8 +1,10 @@
-example_id                               | status | run_time        |
----------------------------------------- | ------ | --------------- |
-./spec/models/inventory_spec.rb[1:1:1:1] | passed | 0.12854 seconds |
-./spec/models/inventory_spec.rb[1:1:2:1] | passed | 0.13119 seconds |
-./spec/models/item_spec.rb[1:1:1:1]      | passed | 0.06403 seconds |
-./spec/models/survivor_spec.rb[1:1:1:1]  | passed | 0.07369 seconds |
-./spec/models/survivor_spec.rb[1:1:1:2]  | passed | 0.1633 seconds  |
-./spec/models/survivor_spec.rb[1:1:1:3]  | passed | 3.62 seconds    |
+example_id                                 | status | run_time        |
+------------------------------------------ | ------ | --------------- |
+./spec/models/inventory_spec.rb[1:1:1:1:1] | passed | 0.05397 seconds |
+./spec/models/inventory_spec.rb[1:1:1:2:1] | passed | 0.03539 seconds |
+./spec/models/inventory_spec.rb[1:1:2:1:1] | passed | 0.03495 seconds |
+./spec/models/inventory_spec.rb[1:1:2:2:1] | passed | 0.03591 seconds |
+./spec/models/item_spec.rb[1:1:1:1]        | passed | 0.01222 seconds |
+./spec/models/survivor_spec.rb[1:1:1:1]    | passed | 0.93378 seconds |
+./spec/models/survivor_spec.rb[1:1:1:2]    | passed | 0.17323 seconds |
+./spec/models/survivor_spec.rb[1:1:1:3]    | passed | 0.06623 seconds |
