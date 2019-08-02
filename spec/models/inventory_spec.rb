@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Inventory, type: :model do
@@ -6,7 +8,7 @@ RSpec.describe Inventory, type: :model do
       it 'should have the same survivor in inventory as the passed one' do
         survivor = create(:survivor)
         inventory = create(:inventory, survivor: survivor)
-        
+
         expect(inventory.survivor).to equal(survivor)
       end
     end
@@ -15,7 +17,7 @@ RSpec.describe Inventory, type: :model do
       it 'should have the same item in inventory as the passed one' do
         item = create(:item)
         inventory = create(:inventory, item: item)
-        
+
         expect(inventory.item).to equal(item)
       end
     end
