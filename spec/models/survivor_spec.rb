@@ -8,7 +8,12 @@ RSpec.describe Survivor do
         expect(survivor).to be_valid
       end
 
-      it 'should return a new survivor with an item list' do
+      it 'should return a new survivor with an inventory' do
+        survivor = create(:survivor)
+        expect(survivor.inventory.exists?).to be_valid
+      end
+
+      it 'should return a new survivor with an inventory, and direct access to its item list' do
         survivor = create(:survivor)
         expect(survivor.items.exists?).to be_valid
       end
