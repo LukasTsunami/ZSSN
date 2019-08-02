@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :inventory do
-    item { nil }
-    survivor { nil }
+    item { create(:item) }
+    survivor { create(:survivor) }
   end
 end
