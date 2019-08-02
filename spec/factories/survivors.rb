@@ -8,6 +8,5 @@ FactoryBot.define do
     latitude { Faker::Address.latitude  }
     longitude { Faker::Address.longitude }
     infected { :not_infected }
-    items { create_list(:item, Faker::Number.between(from: 16, to: 70)) }
   end
 end
