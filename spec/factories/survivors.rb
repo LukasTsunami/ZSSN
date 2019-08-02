@@ -9,7 +9,7 @@ FactoryBot.define do
     longitude { Faker::Address.longitude }
     infected { :not_infected }
     after :create do |survivor|
-      survivor.inventory << FactoryBot.create(:inventory)
+      survivor.inventory << FactoryBot.create(:inventory, survivor: survivor)
     end
   end
 end
