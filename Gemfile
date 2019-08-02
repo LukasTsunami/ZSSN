@@ -12,7 +12,7 @@ gem 'rails', '~> 5.2.3'
 
 group :development, :test do
   gem 'factory_bot_rails'
-  gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
+  gem 'faker', '~> 2.1', '>= 2.1.0'
   gem 'pry'
   gem 'rspec-rails'
 end
@@ -21,4 +21,8 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'simplecov', require: false
 end
