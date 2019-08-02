@@ -8,6 +8,9 @@ FactoryBot.define do
     latitude { Faker::Address.latitude  }
     longitude { Faker::Address.longitude }
     infected { :not_infected }
+  end
+
+  trait :with_inventory do
     after :create do |survivor|
       survivor.inventory << FactoryBot.create(:inventory, survivor: survivor)
     end
