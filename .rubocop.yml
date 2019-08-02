@@ -1,0 +1,15 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/seeds.rb
+    - db/migrate/*.rb
+    - config/initializers/*
+Style/Documentation:
+  Enabled: false
+Style/MixinUsage:
+  Exclude:
+    - bin/*
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+Metrics/LineLength:
+  Max: 100
