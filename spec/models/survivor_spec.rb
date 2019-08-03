@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe Survivor do
-  context '#associations:' do
-    it { should belong_to(:infectable) }
-  end
-
   describe 'Creating a new survivor' do
     context 'when data is valid' do
       let(:survivor) { create(:survivor, :with_inventory) }
