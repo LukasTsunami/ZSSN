@@ -18,6 +18,10 @@ RSpec.describe Survivor do
       end
     end
   end
+  
+  context 'Updating a survivor' do
+    it { is_expected.to callback(:infect_inventory).after(:update).if :saved_change_to_infected? }
+  end
 end
 
 
