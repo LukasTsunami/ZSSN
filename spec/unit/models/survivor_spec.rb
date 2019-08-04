@@ -18,13 +18,9 @@ RSpec.describe Survivor do
       end
     end
   end
-  describe 'Changing infected status' do
-    it 'should infect all its items too' do
-      item = double(create(:item))
-      expect(item).to receive(:items_infected_by_survivor).and change(item, :infected)
-      expect_any_instance_of(Survivor).to receive(:infected_survivor).and_return(true)
-      create(:survivor)
-    end
+  
+  context 'Updating a survivor' do
+    it { is_expected.to callback(:infect_inventory).after(:update).if :saved_change_to_infected? }
   end
 end
 
