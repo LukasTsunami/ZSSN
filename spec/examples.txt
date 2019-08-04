@@ -1,12 +1,13 @@
 example_id                                          | status | run_time        |
 --------------------------------------------------- | ------ | --------------- |
-./spec/unit/models/inventory_spec.rb[1:1:1:1:1]     | passed | 0.08605 seconds |
-./spec/unit/models/inventory_spec.rb[1:1:1:2:1]     | passed | 0.03896 seconds |
-./spec/unit/models/inventory_spec.rb[1:1:2:1:1]     | passed | 0.03861 seconds |
-./spec/unit/models/inventory_spec.rb[1:1:2:2:1]     | passed | 0.0369 seconds  |
-./spec/unit/models/item_spec.rb[1:1:1:1]            | passed | 0.7126 seconds  |
-./spec/unit/models/survivor_spec.rb[1:1:1:1]        | passed | 0.06115 seconds |
-./spec/unit/models/survivor_spec.rb[1:1:1:2]        | passed | 0.0428 seconds  |
-./spec/unit/models/survivor_spec.rb[1:1:1:3]        | passed | 0.06867 seconds |
-./spec/unit/models/survivor_spec.rb[1:2:1]          | passed | 0.00859 seconds |
-./spec/unit/use_cases/infection_report_spec.rb[1:1] | passed | 0.21165 seconds |
+./spec/unit/models/inventory_spec.rb[1:1:1:1:1]     | passed | 0.02681 seconds |
+./spec/unit/models/inventory_spec.rb[1:1:1:2:1]     | passed | 0.02722 seconds |
+./spec/unit/models/inventory_spec.rb[1:1:2:1:1]     | passed | 0.04743 seconds |
+./spec/unit/models/inventory_spec.rb[1:1:2:2:1]     | passed | 0.02081 seconds |
+./spec/unit/models/item_spec.rb[1:1:1:1]            | passed | 0.01246 seconds |
+./spec/unit/models/survivor_observer_spec.rb[1:1]   | passed | 0.0558 seconds  |
+./spec/unit/models/survivor_spec.rb[1:1:1:1]        | passed | 0.04587 seconds |
+./spec/unit/models/survivor_spec.rb[1:1:1:2]        | passed | 0.04275 seconds |
+./spec/unit/models/survivor_spec.rb[1:1:1:3]        | passed | 0.03009 seconds |
+./spec/unit/use_cases/infection_report_spec.rb[1:1] | passed | 0.79483 seconds |
+./spec/unit/use_cases/infection_report_spec.rb[1:2] | passed | 0.05458 seconds |
