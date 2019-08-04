@@ -8,7 +8,7 @@ class Survivor < ApplicationRecord
     state :zero_reports, initial: true
     state :one_reports, :two_reports, :three_reports
 
-    event :run, guards: [:completed?] do
+    event :report_as_infected, guards: [:completed?] do
       transitions from: :zero_reports, to: :one_reports
       transitions from: :one_reports, to: :two_reports
       transitions from: :two_reports, to: :three_reports, after: :declare_survivor_as_infected

@@ -1,16 +1,16 @@
 example_id                                            | status | run_time        |
 ----------------------------------------------------- | ------ | --------------- |
-./spec/unit/models/inventory_spec.rb[1:1:1:1:1]       | passed | 0.06315 seconds |
-./spec/unit/models/inventory_spec.rb[1:1:1:2:1]       | passed | 0.02953 seconds |
-./spec/unit/models/inventory_spec.rb[1:1:2:1:1]       | passed | 0.06891 seconds |
-./spec/unit/models/inventory_spec.rb[1:1:2:2:1]       | passed | 0.01729 seconds |
-./spec/unit/models/item_spec.rb[1:1:1:1]              | passed | 0.73579 seconds |
-./spec/unit/models/survivor_observer_spec.rb[1:1]     | passed | 0.12683 seconds |
-./spec/unit/models/survivor_spec.rb[1:1:1:1]          | passed | 0.04025 seconds |
-./spec/unit/models/survivor_spec.rb[1:1:1:2]          | passed | 0.04798 seconds |
-./spec/unit/models/survivor_spec.rb[1:1:1:3]          | passed | 0.05645 seconds |
-./spec/unit/use_cases/infection_report_spec.rb[1:1:1] | passed | 0.01422 seconds |
-./spec/unit/use_cases/infection_report_spec.rb[1:1:2] | passed | 0.04133 seconds |
-./spec/unit/use_cases/infection_report_spec.rb[1:1:3] | passed | 0.06499 seconds |
-./spec/unit/use_cases/infection_report_spec.rb[1:2:1] | passed | 0.0754 seconds  |
-./spec/unit/use_cases/infection_report_spec.rb[1:2:2] | passed | 0.08534 seconds |
+./spec/unit/models/inventory_spec.rb[1:1:1:1:1]       | passed | 0.07765 seconds |
+./spec/unit/models/inventory_spec.rb[1:1:1:2:1]       | passed | 0.01383 seconds |
+./spec/unit/models/inventory_spec.rb[1:1:2:1:1]       | passed | 0.04527 seconds |
+./spec/unit/models/inventory_spec.rb[1:1:2:2:1]       | passed | 0.03217 seconds |
+./spec/unit/models/item_spec.rb[1:1:1:1]              | passed | 0.00906 seconds |
+./spec/unit/models/survivor_observer_spec.rb[1:1]     | passed | 0.06992 seconds |
+./spec/unit/models/survivor_spec.rb[1:1:1:1]          | passed | 0.04428 seconds |
+./spec/unit/models/survivor_spec.rb[1:1:1:2]          | passed | 0.05409 seconds |
+./spec/unit/models/survivor_spec.rb[1:1:1:3]          | passed | 0.05288 seconds |
+./spec/unit/use_cases/infection_report_spec.rb[1:1:1] | passed | 0.01518 seconds |
+./spec/unit/use_cases/infection_report_spec.rb[1:1:2] | passed | 0.97964 seconds |
+./spec/unit/use_cases/infection_report_spec.rb[1:1:3] | passed | 0.10743 seconds |
+./spec/unit/use_cases/infection_report_spec.rb[1:2:1] | passed | 0.06963 seconds |
+./spec/unit/use_cases/infection_report_spec.rb[1:2:2] | passed | 0.09032 seconds |
