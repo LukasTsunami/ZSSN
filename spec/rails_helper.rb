@@ -21,8 +21,11 @@ Shoulda::Matchers.configure do |config|
       # Or, choose the following (which implies all of the above):
       with.library :rails
     end
-  end
+end
 
+RSpec.configure do |config|
+  config.include(Shoulda::Callback::Matchers::ActiveModel)
+end
 
 
 # Add additional requires below this line. Rails is not loaded until this point!
