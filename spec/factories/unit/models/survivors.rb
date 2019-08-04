@@ -7,7 +7,7 @@ FactoryBot.define do
     gender { Faker::Gender.binary_type }
     latitude { Faker::Address.latitude }
     longitude { Faker::Address.longitude }
-    infected { :not_infected }
+    infected { false }
   end
 
   trait :with_inventory do
