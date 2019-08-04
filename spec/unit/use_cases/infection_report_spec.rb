@@ -9,7 +9,7 @@ RSpec.describe 'When marking a survivor as infected' do
     survivor.save
 
     survivor.items.each do |item|
-    expect(item.infected?).to be_truthy
+      expect(item.infected?).to be_truthy
     end
   end
 end
