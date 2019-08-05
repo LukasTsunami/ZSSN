@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-
 RSpec.describe Inventory, type: :model do
   context 'When creating an inventory' do
     context 'passing a survivor' do
