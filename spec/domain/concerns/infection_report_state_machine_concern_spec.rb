@@ -4,7 +4,8 @@
 RSpec.shared_examples 'an_infection_report_state_machine' do
   before(:all) do
     @class_that_includes_concern = described_class
-    @intance_of_class_that_includes_concern = FactoryBot.build(@class_that_includes_concern.to_s.underscore.to_sym)
+    @klass_name = @class_that_includes_concern.to_s.underscore.to_sym
+    @intance_of_class_that_includes_concern = FactoryBot.build(@klass_name)
   end
 
   it 'should have reports states' do

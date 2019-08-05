@@ -3,15 +3,12 @@
 # Every survivor has an inventory
 # which could have or not items,
 # tradable between survivors
-class QueryInventory < ApplicationRecord
-  self.table_name = 'inventory'
-
-  belongs_to :item
-  belongs_to :survivor
-
+class QueryInventory < Inventory
   before_update :be_immutable!
 
+  protected 
+  
   def be_immutable!
-    return false
+    false
   end
 end

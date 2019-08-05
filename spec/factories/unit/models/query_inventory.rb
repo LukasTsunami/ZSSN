@@ -6,6 +6,3 @@ FactoryBot.define do
     survivor { create(:survivor) }
   end
 end
-
-
-

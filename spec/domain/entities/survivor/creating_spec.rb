@@ -17,8 +17,9 @@ RSpec.describe Survivor, type: :model do
       end
 
       describe '#gender' do
+        let(:message) { 'Please provide a valid gender [male or female]' }
         it { should validate_presence_of(:gender) }
-        it { should validate_inclusion_of(:gender).in_array(%w[male female]).with_message('Please provide a valid gender [male or female]') }
+        it { should validate_inclusion_of(:gender).in_array(%w[male female]).with_message(message) }
       end
 
       describe '#latitude' do
