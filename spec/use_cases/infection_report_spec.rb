@@ -21,7 +21,7 @@ RSpec.describe 'When reporting a survivor as infected' do
 
   context 'after the last one' do
     it 'should declare survivor as infected' do
-      survivor = create(:survivor, :with_inventory, infected: false)
+      survivor = create(:survivor, :with_query_inventory, infected: false)
       survivor.report_as_infected
       survivor.report_as_infected
       survivor.report_as_infected
@@ -29,7 +29,7 @@ RSpec.describe 'When reporting a survivor as infected' do
     end
 
     it 'should mark all its inventory items as infected too' do
-      survivor = create(:survivor, :with_inventory, infected: false)
+      survivor = create(:survivor, :with_query_inventory, infected: false)
       survivor.infected = true
       survivor.save
 

@@ -43,7 +43,7 @@ RSpec.describe Survivor, type: :model do
     end
 
     context 'when data is valid' do
-      let(:survivor) { create(:survivor, :with_inventory) }
+      let(:survivor) { create(:survivor, :with_query_inventory) }
 
       it 'should return a new survivor' do
         expect(survivor).to be_valid

@@ -2,24 +2,24 @@
 
 RSpec.describe Survivor, type: :model do
   describe 'Updating a new survivor' do
-    it 'should not allow to change its inventory' do
-      survivor = create(:survivor, :with_inventory)
-      some_random_item = create(:item)
-      some_random_survivor = create(:survivor)
+    before(:all) do 
+      @survivor = create(:survivor, :with_query_inventory_and_two_items)
+      @first_inventory_object = @survivor.inventory.first
+    end
 
-      first_inventory_object = survivor.inventory.first
+    it 'should not allow to change its inventory #amount' do
+      @first_inventory_object.amount = 4
+      expect{ @first_inventory_object.save }.to raise_error("QueryInventory is marked as readonly")
+    end
 
-      immutable_amount_value = first_inventory_object.amount
-      immutable_survivor_association = first_inventory_object.survivor
-      immutable_item_association = first_inventory_object.item
+    it 'should not allow to change its inventory #survivor' do
+      @first_inventory_object.survivor = create(:survivor)
+      expect{ @first_inventory_object.save }.to raise_error("QueryInventory is marked as readonly")
+    end
 
-      first_inventory_object.amount = 4
-      first_inventory_object.survivor = some_random_survivor
-      first_inventory_object.item = some_random_item
-
-      expect(first_inventory_object.amount).to eq(immutable_amount_value)
-      expect(first_inventory_object.survivor).to eq(immutable_survivor_association)
-      expect(first_inventory_object.item).to eq(immutable_item_association)
+    it 'should not allow to change its inventory #item' do
+      @first_inventory_object.item = create(:item)
+      expect{ @first_inventory_object.save }.to raise_error("QueryInventory is marked as readonly")
     end
   end
 end
