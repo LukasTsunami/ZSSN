@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module InfectionReportStateMachine
+module InfectionReportStateMachineConcern
   extend ActiveSupport::Concern
 
   included do

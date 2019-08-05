@@ -2,7 +2,7 @@
 
 # At zombie apocalipse everyone who is alive is an survivor
 class Survivor < ApplicationRecord
-  include InfectionReportStateMachine
+  include InfectionReportStateMachineConcern
   has_many :inventory
   has_many :items, through: :inventory
 
