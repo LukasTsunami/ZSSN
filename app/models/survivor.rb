@@ -21,21 +21,21 @@ class Survivor < ApplicationRecord
   validate :valid_longitude?
 
   def valid_latitude?
-    return if six_digits_precision?(latitude) && (latitude.is_a? Numeric)
+    return if two_digits_precision_at_least?(latitude) && (latitude.is_a? Numeric)
 
-    errors.add(:latitude, 'Please provide a float number for latitude coordinates with six precision digits')
+    errors.add(:latitude, 'Please provide a float number for latitude with two precision digits')
   end
   
   def valid_longitude?
-    return if six_digits_precision?(longitude) && (longitude.is_a? Numeric)
+    return if two_digits_precision_at_least?(longitude) && (longitude.is_a? Numeric)
     
-    errors.add(:longitude, 'Please provide a float number for longitude coordinates with six precision digits')
+    errors.add(:longitude, 'Please provide a float number for longitude with two precision digits')
   end
 
-  def six_digits_precision?(number)
+  def two_digits_precision_at_least?(number)
     parts = number.to_s.split('.')
     return false if parts.size != 2
-    return parts.last.size === 6
+    return parts.last.size >= 2
   end
 
   def should_be_male_or_female?
