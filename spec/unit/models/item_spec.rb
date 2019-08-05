@@ -2,7 +2,7 @@
 
 require 'item'
 
-RSpec.describe Item do
+RSpec.describe Item, type: :model do
   context 'When creating an item' do
     context 'when validating' do
       describe '#name' do
@@ -13,18 +13,13 @@ RSpec.describe Item do
         it { should allow_value('Jon Tron').for(:name) }
       end
 
-      describe '#amount' do
-        it { should validate_presence_of(:amount) }
-        it { should validate_inclusion_of(:amount).in_range(0..999) }
-      end
-
       describe '#points_value' do
         it { should validate_presence_of(:points_value) }
         it { should validate_inclusion_of(:points_value).in_range(1..4) }
       end
 
+      # Its an optional field
       describe '#image_url' do
-        it { should validate_presence_of(:image_url) }
         it { should_not allow_value(123).for(:image_url) }
         it { should_not allow_value('almost@there.com').for(:image_url) }
         it { should allow_value('http://www.site.com/imagem.jpg').for(:image_url) }
