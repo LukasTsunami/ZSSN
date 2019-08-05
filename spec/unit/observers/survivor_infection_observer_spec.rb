@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-RSpec.describe SurvivorObserver do
+RSpec.describe SurvivorInfectionObserver do
   before :each do
     @survivor = create(:survivor, :with_inventory)
-    @observer = SurvivorObserver.instance
+    @observer = SurvivorInfectionObserver.instance
   end
 
   it 'should invoke after_update on the observed object' do
