@@ -8,6 +8,7 @@ require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+require 'shoulda/matchers'
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -24,7 +25,8 @@ Shoulda::Matchers.configure do |config|
 end
 
 RSpec.configure do |config|
-  config.include(Shoulda::Callback::Matchers::ActiveModel)
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+  config.include(Shoulda::Callback::Matchers::ActiveModel, type: :model)
 end
 
 # Add additional requires below this line. Rails is not loaded until this point!
