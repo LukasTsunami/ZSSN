@@ -23,7 +23,8 @@ module Myapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-    config.autoload_paths += [Rails.root.join('app', 'validators').to_s]
+    config.autoload_paths += [Rails.root.join('app','models','validators').to_s]
+    config.autoload_paths += [Rails.root.join('app','models','observers').to_s]
     config.api_only = true
     config.generators.test_framework :rspec
   end
