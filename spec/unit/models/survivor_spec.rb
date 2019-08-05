@@ -2,22 +2,9 @@
 
 RSpec.describe Survivor, type: :model do
   describe 'Creating a new survivor' do
-
     context 'when validating' do
-      context 'presence of' do
-        it { should validate_presence_of(:name) }
-
-        it { should validate_presence_of(:age) }
-  
-        it { should validate_presence_of(:latitude) }
-  
-        it { should validate_presence_of(:longitude) }
-  
-        it { should validate_presence_of(:gender) }
-      end
-     
-      context 'accepted_values' do
         describe '#name' do
+          it { should validate_presence_of(:name) }
           it { should_not allow_value(123).for(:name) }
           it { should_not allow_value('almost@there.com').for(:name) }
           it { should allow_value('Lucas').for(:name) }
@@ -25,30 +12,35 @@ RSpec.describe Survivor, type: :model do
         end
 
         describe '#age' do
+          it { should validate_presence_of(:age) }
           it { should validate_inclusion_of(:age).in_range(10..100) }
         end
 
         describe '#gender' do
-          it { should allow_values(:male, :female).for(:gender) }
+          it { should validate_presence_of(:gender) }
+          it { should validate_inclusion_of(:gender).in_array(%w[male female]).with_message('Please provide a valid gender [male or female]')}
         end
 
-        describe '#latitude' do
+        describe '#latitude', focus: true do
+          it { should validate_presence_of(:latitude) }
+          it { should validate_numericality_of(:latitude) }
           it { should_not allow_value(123).for(:latitude) }
           it { should_not allow_value('almost@there.com').for(:latitude) }
+
+          # it should allow only values with six digits of decimal precision
           it { should allow_value(10.101245).for(:latitude) }
-          it { should validate_numericality_of(:latitude) }
         end
 
         describe '#longitude' do
+          it { should validate_presence_of(:longitude) }
+          it { should validate_numericality_of(:longitude) }
           it { should_not allow_value(123).for(:longitude) }
           it { should_not allow_value('almost@there.com').for(:longitude) }
-          it { should allow_value(10.101245).for(:longitude) }
-          it { should validate_numericality_of(:longitude) }
-        end
-      end
-    end
 
-    
+          # it should allow only values with six digits of decimal precision
+          it { should allow_value(10.101245).for(:longitude) }
+        end
+    end
 
     context 'when data is valid' do
       let(:survivor) { create(:survivor, :with_inventory) }
