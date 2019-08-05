@@ -10,7 +10,7 @@ RSpec.shared_examples 'an_infection_report_state_machine' do
   it 'should have reports states' do
     expect(@intance_of_class_that_includes_concern).to have_state :zero_reports
   end
-  
+
   it 'should allow event report_as_infected' do
     expect(@intance_of_class_that_includes_concern).to allow_event :report_as_infected
   end
