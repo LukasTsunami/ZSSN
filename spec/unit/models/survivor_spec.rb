@@ -1,7 +1,21 @@
 # frozen_string_literal: true
 
-RSpec.describe Survivor do
+RSpec.describe Survivor, type: :model do
   describe 'Creating a new survivor' do
+
+    context "when validating presence" do
+      it { should validate_presence_of(:name) }
+
+      it { should validate_presence_of(:age) }
+
+      it { should validate_presence_of(:latitude) }
+
+      it { should validate_presence_of(:longitude) }
+
+      it { should validate_presence_of(:gender) }
+    end
+    
+
     context 'when data is valid' do
       let(:survivor) { create(:survivor, :with_inventory) }
 
