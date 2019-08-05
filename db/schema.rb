@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_08_05_084451) do
     t.bigint "survivor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "amount", default: 0, null: false
     t.index ["item_id"], name: "index_inventory_on_item_id"
     t.index ["survivor_id"], name: "index_inventory_on_survivor_id"
   end
@@ -31,7 +32,6 @@ ActiveRecord::Schema.define(version: 2019_08_05_084451) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "infected", default: false, null: false
-    t.integer "amount", default: 0, null: false
   end
 
   create_table "survivors", force: :cascade do |t|

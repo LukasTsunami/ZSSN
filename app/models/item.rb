@@ -4,4 +4,7 @@
 class Item < ApplicationRecord
   has_many :inventory
   has_many :survivors, through: :inventory
+
+  validates :points_value, presence: true
+  validates :name, presence: true
 end
