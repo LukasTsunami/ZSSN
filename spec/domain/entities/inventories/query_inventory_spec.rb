@@ -40,8 +40,8 @@ end
 
 RSpec.describe QueryInventory, type: :model do
   context 'When trying to update an inventory by Query Object' do
-      it { should validate_presence_of(:amount) }
-      it { should validate_presence_of(:survivor) }
-      it { should validate_presence_of(:item) }
+    it { should validate_presence_of(:amount) }
+    it { should validate_presence_of(:survivor) }
+    it { should validate_presence_of(:item) }
   end
 end

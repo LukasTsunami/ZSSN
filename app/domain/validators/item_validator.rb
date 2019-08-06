@@ -24,14 +24,14 @@ class ItemValidator < SimpleDelegator
   def image_url?
     return if image_url.nil?
     return if image_url =~ /^#{URI::DEFAULT_PARSER.make_regexp}$/
-    
+
     errors.add(:image_url, 'Please provide a valid image url')
   end
 
   def allowed_image_format?
     return true if image_url.nil?
     return true if image_url =~ /\.(png|jpg|gif|bmp|svg)\Z/i
- 
+
     errors.add(:image_url, 'Please provide image in one of this formats: png|jpg|gif|bmp|svg')
   end
 end

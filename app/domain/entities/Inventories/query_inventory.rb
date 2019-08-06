@@ -8,5 +8,5 @@ class QueryInventory < Inventory
 
   validates :amount, presence: true
   validates :survivor, presence: true
-  validates :item, presence: true 
+  validates :item, presence: true
 end
