@@ -14,8 +14,7 @@ RSpec.describe QueryInventory, type: :model do
 
       context 'invalid because it is missing' do
         it 'should raise a validation error:' do
-          msg = 'Validation failed: Survivor must exist'
-          expect { create(:query_inventory, survivor: nil) }.to raise_error(ActiveRecord::RecordInvalid, msg)
+          expect { create(:query_inventory, survivor: nil) }.to raise_error(ActiveRecord::RecordInvalid)
         end
       end
     end
@@ -32,10 +31,18 @@ RSpec.describe QueryInventory, type: :model do
 
       context 'invalid because it is missing' do
         it 'should have the same item in inventory as the passed one' do
-          msg = 'Validation failed: Item must exist'
-          expect { create(:query_inventory, item: nil) }.to raise_error(ActiveRecord::RecordInvalid, msg)
+          expect { create(:query_inventory, item: nil) }.to raise_error(ActiveRecord::RecordInvalid)
         end
       end
     end
+  end
+end
+
+RSpec.describe QueryInventory, type: :model do
+  context 'When trying to update an inventory by Query Object' do
+      it { is_expected.to callback(:be_immutable!).before(:update) }
+      it { should validate_presence_of(:amount) }
+      it { should validate_presence_of(:survivor) }
+      it { should validate_presence_of(:item) }
   end
 end
