@@ -4,7 +4,7 @@ This project follows the [rules and terms](https://github.com/LukasTsunami/ZSSN/
 
 ## Project Setup and answering some Questions:
 
-### How is the project proccess?
+### How is the project going?
   * It isn't finished yet, but everything it already haves its described bellow:
 
 ### How to run the project?   
@@ -26,7 +26,7 @@ open at browser the file at ./coderage/index.html
 Unfortunently the project is not consumable yet. It only have the tests suite passing    
     
 ### But, how can I see, what you did in this project?   
-Weel, I will try to explain what was did and what was I was thinking in doing that this like that
+Weel, I will try to explain what was did and what I was thinking in doing that this like that
 
 ## The project:
 * First, everything I made is in domain layer. After that I would need to implement at service layer to, in order to take requests and calls domain object rules to apply those features:   
