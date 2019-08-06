@@ -23,7 +23,19 @@ RSpec.describe Item, type: :model do
         it { should_not allow_value(123).for(:image_url) }
         it { should_not allow_value('almost@there.com').for(:image_url) }
         it { should allow_value('http://www.site.com/imagem.jpg').for(:image_url) }
-        it { should allow_value('./imagem.png').for(:image_url) }
+        
+        it 'should be a valid image' do  
+          image = create(:item)
+          expect(image.image_url).to match(/\.(png|jpg|gif|bmp|svg)\Z/i)
+        end
+        it 'should be a valid url' do  
+          image = create(:item)
+          expect(image.image_url).to match(/^#{URI::DEFAULT_PARSER.make_regexp}$/)
+        end
+        it 'should be an invalid image, but valid url' do  
+          custom_image_url = 'http://www.site.com/imagems'
+          expect { create(:item, image_url: custom_image_url) }.to raise_error(ActiveRecord::RecordInvalid,'Validation failed: Image url Please provide image in one of this formats: png|jpg|gif|bmp|svg')
+        end
       end
     end
 

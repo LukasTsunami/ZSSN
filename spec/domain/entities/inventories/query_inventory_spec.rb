@@ -40,7 +40,6 @@ end
 
 RSpec.describe QueryInventory, type: :model do
   context 'When trying to update an inventory by Query Object' do
-      it { is_expected.to callback(:be_immutable!).before(:update) }
       it { should validate_presence_of(:amount) }
       it { should validate_presence_of(:survivor) }
       it { should validate_presence_of(:item) }
