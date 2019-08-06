@@ -99,7 +99,7 @@ Weel, I will try to explain what was did and what was I was thinking in doing th
   - This DTO answer also goes through Sanitizer to a JSON Mapping     
   - All handlers knows about Bad News Counter when inherits from BaseHandler     
       
-That's it, trade workflow its     
+That's it, trade workflow its mapped   
      
 .     
      
@@ -107,10 +107,12 @@ _Lets talk about other services (All of them responds with a DTO and it is manag
      
 ## InfectionService     
 ### In infection service we have two nested services: ReportInfectedSurvivor and InfectedReports     
-* [ReportInfectedSurvivor]: Report a survivor as infected     
- - It will call the report_as_infected! of Survivor object     
-* [InfectedReports]: Getting reports about infected things     
- - It will call the proper domain object to respond back right answer     
+* ReportInfectedSurvivor: 
+  - Report a survivor as infected     
+  - It will call the report_as_infected! of Survivor object     
+* InfectedReports: 
+  - Getting reports about infected things     
+  - It will call the proper domain object to respond back right answer     
       
 ## SurvivorDataManagerService     
 ### It is responsable for update survivor data and knowing about which data connot be updated     
@@ -119,40 +121,40 @@ _Lets talk about other services (All of them responds with a DTO and it is manag
      
 ## Gems that I want to use to improve this project:   
 * JSONAPI::Resources        
- - For handling with filters, ordering and relashionships in requests       
- - [URL]= https://github.com/cerebris/jsonapi-resources        
+  - For handling with filters, ordering and relashionships in requests       
+  - [URL]= https://github.com/cerebris/jsonapi-resources        
 * Periscope     
- - For handling requests using model scopes     
- - [URL]= https://github.com/laserlemon/periscope     
+  - For handling requests using model scopes     
+  - [URL]= https://github.com/laserlemon/periscope     
      
 ## Gems already being used in this project:     
 * Rspec-rails     
- - For test handling using a Spec DSL     
- - [URL]= https://github.com/rspec/rspec-rails     
+  - For test handling using a Spec DSL     
+  - [URL]= https://github.com/rspec/rspec-rails     
 * AASM     
- - For managing survivor infection reports state machine     
- - [URL]= https://github.com/aasm/aasm     
+  - For managing survivor infection reports state machine     
+  - [URL]= https://github.com/aasm/aasm     
 * Everett     
- - For using observers in Rails 5     
- - [URL]= https://github.com/yasaichi/everett     
+  - For using observers in Rails 5     
+  - [URL]= https://github.com/yasaichi/everett     
 * Pry     
- - For a better debbug in code     
- - [URL]= https://github.com/pry/pry     
+  - For a better debbug in code     
+  - [URL]= https://github.com/pry/pry     
 * Factory Bot Rails     
- - For creating objects using factories faster and using Traits     
- - [URL]= https://github.com/thoughtbot/factory_bot_rails     
+  - For creating objects using factories faster and using Traits     
+  - [URL]= https://github.com/thoughtbot/factory_bot_rails     
 * Faker     
- - For creating factories with Organized random data     
- - [URL]= https://github.com/faker-ruby/faker     
+  - For creating factories with Organized random data     
+  - [URL]= https://github.com/faker-ruby/faker     
 * Shoulda Matchers     
- - For using better validator matchers in testing     
- - [URL]= https://github.com/thoughtbot/shoulda-matchers     
+  - For using better validator matchers in testing     
+  - [URL]= https://github.com/thoughtbot/shoulda-matchers     
 * Shoulda Matchers Callback     
- - For testing callbacks, mainly model callbacks     
- - [URL]= https://github.com/jdliss/shoulda-callback-matchers     
+  - For testing callbacks, mainly model callbacks     
+  - [URL]= https://github.com/jdliss/shoulda-callback-matchers     
 * Simplecov     
- - For test coverage of project     
- - [URL]= https://github.com/colszowka/simplecov     
+  - For test coverage of project     
+  - [URL]= https://github.com/colszowka/simplecov     
 * Rubocop     
- - For project best pratices code analyze and formatting     
- - [URL]= https://github.com/rubocop-hq/rubocop/     
+  - For project best pratices code analyze and formatting     
+  - [URL]= https://github.com/rubocop-hq/rubocop/     
