@@ -1,6 +1,6 @@
 # ZSSN (Zombie Survival Social Network)
 
-This project follows the rules and terms from Codeminer42 backend test.
+This project follows the [rules and terms](https://github.com/LukasTsunami/ZSSN/wiki/Projects-Definition---the-problem-description-(What-is-to-do)) from [Codeminer42](https://www.codeminer42.com/) backend test that I applied.
 
 ## Project Setup and answering some Questions:
 
