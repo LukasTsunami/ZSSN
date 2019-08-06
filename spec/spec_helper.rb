@@ -2,7 +2,7 @@
 
 require 'simplecov'
 SimpleCov.start 'rails'
-
+SimpleCov.minimum_coverage 100
 require 'aasm/rspec'
 
 RSpec.configure do |config|

@@ -10,9 +10,15 @@ FactoryBot.define do
     infected { false }
   end
 
-  trait :with_inventory do
+  trait :with_query_inventory do
     after :create do |survivor|
-      survivor.inventory << FactoryBot.create(:inventory, survivor: survivor)
+      survivor.inventory.append(FactoryBot.create(:query_inventory, survivor: survivor))
+    end
+  end
+
+  trait :with_query_inventory_and_two_items do
+    after :create do |survivor|
+      survivor.inventory.append(FactoryBot.create(:query_inventory, survivor: survivor, amount: 2))
     end
   end
 end

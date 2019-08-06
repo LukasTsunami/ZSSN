@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-RSpec.describe Inventory, type: :model do
+RSpec.describe QueryInventory, type: :model do
   context 'When creating an inventory' do
     context 'passing a survivor' do
       context 'valid' do
         it 'should have the same survivor in inventory as the passed one' do
           survivor = create(:survivor)
-          inventory = create(:inventory, survivor: survivor)
+          inventory = create(:query_inventory, survivor: survivor)
 
           expect(inventory.survivor).to equal(survivor)
         end
@@ -14,8 +14,7 @@ RSpec.describe Inventory, type: :model do
 
       context 'invalid because it is missing' do
         it 'should raise a validation error:' do
-          message = 'Validation failed: Survivor must exist'
-          expect { create(:inventory, survivor: nil) }.to raise_error(ActiveRecord::RecordInvalid, message)
+          expect { create(:query_inventory, survivor: nil) }.to raise_error(ActiveRecord::RecordInvalid)
         end
       end
     end
@@ -24,7 +23,7 @@ RSpec.describe Inventory, type: :model do
       context 'valid' do
         it 'should have the same item in inventory as the passed one' do
           item = create(:item)
-          inventory = create(:inventory, item: item)
+          inventory = create(:query_inventory, item: item)
 
           expect(inventory.item).to equal(item)
         end
@@ -32,10 +31,17 @@ RSpec.describe Inventory, type: :model do
 
       context 'invalid because it is missing' do
         it 'should have the same item in inventory as the passed one' do
-          message = 'Validation failed: Item must exist'
-          expect { create(:inventory, item: nil) }.to raise_error(ActiveRecord::RecordInvalid, message)
+          expect { create(:query_inventory, item: nil) }.to raise_error(ActiveRecord::RecordInvalid)
         end
       end
     end
+  end
+end
+
+RSpec.describe QueryInventory, type: :model do
+  context 'When trying to update an inventory by Query Object' do
+    it { should validate_presence_of(:amount) }
+    it { should validate_presence_of(:survivor) }
+    it { should validate_presence_of(:item) }
   end
 end

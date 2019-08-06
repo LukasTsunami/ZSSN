@@ -17,8 +17,9 @@ RSpec.describe Survivor, type: :model do
       end
 
       describe '#gender' do
+        let(:message) { 'Please provide a valid gender [male or female]' }
         it { should validate_presence_of(:gender) }
-        it { should validate_inclusion_of(:gender).in_array(%w[male female]).with_message('Please provide a valid gender [male or female]') }
+        it { should validate_inclusion_of(:gender).in_array(%w[male female]).with_message(message) }
       end
 
       describe '#latitude' do
@@ -43,7 +44,7 @@ RSpec.describe Survivor, type: :model do
     end
 
     context 'when data is valid' do
-      let(:survivor) { create(:survivor, :with_inventory) }
+      let(:survivor) { create(:survivor, :with_query_inventory) }
 
       it 'should return a new survivor' do
         expect(survivor).to be_valid

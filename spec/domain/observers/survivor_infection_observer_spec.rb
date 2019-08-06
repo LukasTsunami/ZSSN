@@ -2,7 +2,7 @@
 
 RSpec.describe SurvivorInfectionObserver do
   before :each do
-    @survivor = create(:survivor, :with_inventory)
+    @survivor = create(:survivor, :with_query_inventory)
     @observer = SurvivorInfectionObserver.instance
   end
 
