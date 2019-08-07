@@ -11,7 +11,7 @@ This project follows the [rules and terms](https://github.com/LukasTsunami/ZSSN/
 * First you need to have docker and docker-compose commands installed in your machine   
 After that, there are some commands you need to run before running project:   
 ``docker-compose build``   
-``docker-compoe up -d``   
+``docker-compose up -d``   
 ``docker-compose exec web bundle install``   
 ``docker-compose exec web rails db:create``   
 ``docker-compose exec web rails db:migrate``  
