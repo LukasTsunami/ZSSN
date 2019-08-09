@@ -2,10 +2,10 @@
 
 This project follows the [rules and terms](https://github.com/LukasTsunami/ZSSN/wiki/Projects-Definition) from [Codeminer42](https://www.codeminer42.com/) backend test that I applied.
 
-## Project Setup and answering some Questions:
+## Project Setup and answering some questions:
 
 ### How is the project going?
-  * It isn't finished yet, but everything it already haves its described bellow:
+  * It isn't finished yet, but everything it already have it's described bellow:
 
 ### How to run the project?   
 * First you need to have docker and docker-compose commands installed in your machine   
@@ -19,27 +19,27 @@ After that, there are some commands you need to run before running project:
 ### How can I run the tests?    
 ``docker-compose exec web rspec``   
 
-### How can I see Simplecode's code coverage report?
-open at browser the file at ./coderage/index.html   
+### How can I see Simplecode's test coverage report?
+open at browser the file at ./coverage/index.html   
      
 ### How can I see project running?
 Unfortunently the project is not consumable yet. It only have the tests suite passing    
     
 ### But, how can I see, what you did in this project?   
-Weel, I will try to explain what was did and what I was thinking in doing that this like that
+Weel, I will try to explain what was did, and what I was thinking in doing this way
 
 ## The project:
-* First, everything I made is in domain layer. After that I would need to implement at service layer to, in order to take requests and calls domain object rules to apply those features:   
+* First, everything I made is in domain layer. After that I would need to implement at service layer too, in order to take requests and call domain object rules to apply those features:   
 ### Add survivors to the database:
 * I can save survivors on database with the Survivor model. 
-* I already made its persistance validation too. It is on SurvivorValidator which is a Concern extracting every validation to survivo's model persistance
+* I already made it's persistance validation too. It is on SurvivorValidator which is a Concern extracting every validation to Survivor's model persistance
  
 ### A survivor also must have an inventory:
-* Survivor have an inventory of items, and can access them directly by has through association or by inventory and after items
+* Survivor have an inventory of items, and can access them directly by 'has through association', or by 'inventory' and so, getting the items
 
 ### Survivors cannot Add/Remove items from inventory    
-* I followed the CQRS principle: separating command (update and delete) from queries (to ease, I didn't make it readonly, I used before update callback to avoid it to be updated)    
-* Survivors have access to the QueryInventory class, witch have access only in be created and list, filter and search items on inventory. At this way a survivor cannot change it inventory directly.   
+* I followed the CQRS principle: separating command (update and delete) from queries (to ease, I didn't make it readonly, I used 'before update' callback to avoid it to be updated)    
+* Survivors have access to the QueryInventory class, wich have access only in be created and list, filter and search items on inventory. At this way a survivor cannot change his/her inventory directly.   
    
 ### A survivor is marked as infected when at least three other survivors report their contamination.
 * I used a state machine to manage survivor contamination reports, which, calling the same method, I could change its state.
@@ -56,7 +56,7 @@ Weel, I will try to explain what was did and what I was thinking in doing that t
 ### Mainly, it have four responsibilities: Take requests, filter them, delegate them to service, respond back to client     
 * It is responsible to gets client request and perform some actions in it before send it to Service Layer     
   - Validate request params with strong params     
-  - Break url in to pieces that it can get the filters, pagination, order, relashionship filters and content negociation along it and knows exactly what the client needs     
+  - Break url in to pieces that it can get the filters, pagination, sort, relashionship filters and content negociation along it and knows exactly what the client needs     
   - Calls a DataMapper which will map the request in a Data Transfer Object (DTO), with only the required data.     
   - Delegate to the proper part the request with DTO. There is a service for each request domain.     
 * Respond back to clients     
@@ -83,10 +83,10 @@ Weel, I will try to explain what was did and what I was thinking in doing that t
   - It saves the state of both survivors inventory before doing the trade   
   - If something goes wrong it can rollback the transaction and restore old inventory state   
 * [Unit of Work] Worker   
-  - Its who executes the trade between both users   
+  - It's who executes the trade between both users   
   - It uses the CommandInventory in order to update inventory    
-* Publiher:   
-  - It publishes a successfully transactions in a channel, to everyone that would want to know about it   
+* Publisher:   
+  - It publishes a successfully transaction in a channel, to everyone that would want to know about it   
 * Organizer:   
   - It map a DTO answer to give back to ApplicationLayer   
      
@@ -95,7 +95,7 @@ Weel, I will try to explain what was did and what I was thinking in doing that t
   - Respond back to client     
      
 ### What happens when something breaks?     
-  - There is a **Bad News Counter**, which will map a DTO answer to give send back to client     
+  - There is a **Bad News Teller**, which will catch an exception and maps to a DTO answer to give send back to client     
   - This DTO answer also goes through Sanitizer to a JSON Mapping     
   - All handlers knows about Bad News Counter when inherits from BaseHandler     
       
