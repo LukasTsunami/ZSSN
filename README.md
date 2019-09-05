@@ -1,12 +1,5 @@
 # ZSSN (Zombie Survival Social Network)
 
-This project follows the [rules and terms](https://github.com/LukasTsunami/ZSSN/wiki/Projects-Definition) from [Codeminer42](https://www.codeminer42.com/) backend test that I applied.
-
-## Project Setup and answering some questions:
-
-### How is the project going?
-  * It isn't finished yet, but everything it already have it's described bellow:
-
 ### How to run the project?   
 * First you need to have docker and docker-compose commands installed in your machine   
 After that, there are some commands you need to run before running project:   
